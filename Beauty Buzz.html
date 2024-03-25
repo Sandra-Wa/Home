@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BeautyBuzz</title> 
+	
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #fff;
+		}
+		header {
+			background-color: #ff6699;
+			color: #fff;
+			padding: 10px 20px;
+		}
+		header h1 {
+			margin: 0;
+			font-size: 2rem;
+		}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px;
+		}
+		.product {
+			background-color: #fff;
+			border: 1px solid #ddd;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			flex: 1 0 300px;
+			margin-bottom: 20px;
+			padding: 20px;
+			transition: transform 0.3s ease-in-out;
+		}
+		.product:hover {
+			transform: translateY(-5px);
+		}
+		.product img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 10px;
+		}
+		.product h2 {
+			margin: 0 0 10px;
+			font-size: 1.5rem;
+			color: #ff6699;
+		}
+		.product p {
+			margin: 0;
+			font-size: 1rem;
+			line-height: 1.5;
+		}
+		.comments {
+			flex: 1 0 600px;
+			margin-right: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+		}
+		.comments h2 {
+			margin: 0 0 10px;
+			font-size: 1.5rem;
+			color: #ff6699;
+		}
+		.comments textarea {
+			width: 100%;
+			height: 150px;
+			padding: 10px;
+			margin-bottom: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			resize: none;
+		}
+		.comments button {
+			background-color: #ff6699;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.comments button:hover {
+			background-color: #e0547e;
+		}
+	</style>
+	
+</head>
+<body>
+	<header>
+		<h1>BeautyBuzz</h1>
+	
+	</header>
+	
+	<p>BeautyBuzz is a beauty based website where we put everyone's favourite product under review.We shine the spotlight on brands and get to hear from the users which ones are worth our money.Trending products will be posted each week for feedback from the best critics, the users themselves.
+	<main>
+				<div class="product">
+					<img src="WhatsApp Image 2024-03-22 at 14.23.49_bd21167f.jpg" alt="Product 1">
+					<h2>Malibu Sunscreen spf 50</h2>
+				 <p> Claiming to have very high protection,Malibu is enriched with vitamins and has both UVA/UVB sunscreens.It however has mixed reviews from users</p>
+					<div class="comments">
+						<h2>Comments</h2>
+						<form id="comment-form">
+							<textarea id="comment-text" placeholder="Add your comment here..."></textarea>
+							<button type="submit">Submit</button>
+						</form>
+						<ul id="comments-list">
+							<!-- comments will be added here by JavaScript -->
+						</ul><li>
+							<img src="user1.jpg" alt="User 1">
+							<p>This product is amazing! It really made my skin feel so soft and smooth.</p>
+							<span>- Sarah</span>
+						</li><li>
+							<img src="user2.jpg" alt="User 2">
+							<p>I hate it.It burns my eyes.</p>
+							<span>- Jane</span>
+						</li>
+					</div>
+				</div>
+				<!-- more products here -->
+		
+			
+<script>
+    // get the form and textarea elements
+    const form = document.getElementById('comment-form');
+    const textarea = document.getElementById('comment-text');
+
+    // add a submit event listener to the form
+    form.addEventListener('submit', function(event) {
+        // prevent the default form submission behavior
+        event.preventDefault();
+
+        // get the comment text
+        const commentText = textarea.value.trim();
+
+        // check if the comment is not empty
+        if (commentText !== '') {
+            // create a new list item for the comment
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img src="user1.jpg" alt="You">
+                <p>${commentText}</p>
+            `;
+
+            // get the comments list and add the new comment
+            const commentsList = document.getElementById('comments-list');
+            commentsList.appendChild(listItem);
+
+            // clear the textarea
+            textarea.value = '';
+        }
+    });
+</script>
+<div class="product">
+    <video width="100%" controls>
+		<source src="BN.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+    <h2>Balance Niacinamide Serum</h2>
+    <p>A water-based formulation with 15% Niacinamide and Vitamin B3.This serum claims to reduce blemishes and improve skin texxture.What do you think?</p>
+				</p>
+    <div class="comments">
+        <h2>Comments</h2>
+        <form id="comment-form-3">
+            <textarea id="comment-text-3" placeholder="Add your comment here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <ul id="comments-list-3">
+            <!-- comments will be added here by JavaScript -->
+        </ul><li>
+			<img src="user2.jpg" alt="User 1">
+			<p>Overrated.</p>
+			<span>- Ema</span>
+		</li>
+
+		<li>
+			<img src="user2.jpg" alt="User 2">
+			<p>This really helped heal my skin.</p>
+			<span>- Tom</span>
+		</li>
+
+		<li>
+			<img src="user2.jpg" alt="User 3">
+			<p>It is a good prooduct.I have no issue with it but there are better for cheaper.</p>
+			<span>- Debby</span>
+		</li>
+
+
+    </div>
+</div>
+
+<script>
+    // get the form and textarea elements for product 3
+    const form3 = document.getElementById('comment-form-3');
+    const textarea3 = document.getElementById('comment-text-3');
+
+    // add a submit event listener to the form for product 3
+    form3.addEventListener('submit', function(event) {
+        // prevent the default form submission behavior
+        event.preventDefault();
+
+        // get the comment text
+        const commentText = textarea3.value.trim();
+
+        // check if the comment is not empty
+        if (commentText !== '') {
+            // create a new list item for the comment
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img src="user1.jpg" alt="You">
+                <p>${commentText}</p>
+            `;
+
+            // get the comments list for product 3 and add the new comment
+            const commentsList3 = document.getElementById('comments-list-3');
+            commentsList3.appendChild(listItem);
+
+            // clear the textarea
+            textarea3.value = '';
+        }
+    });
+</script>
+										
+<div class="product">
+	<video width="100%" controls>
+		<source src="T.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+    
+    <h2>Tretinoin</h2>
+    <p>Now this one is a hot topic.Tretinoin has been a trending product since 2022.It works by irritating the skin slowly stripping it of old damaged cells and making way for newer cells. For some tretinoin seems like the magic remedy but for other the irritation is just not worth it.</p>
+    <div class="comments">
+        <h2>Comments</h2>
+        <form id="comment-form-4">
+            <textarea id="comment-text-4" placeholder="Add your comment here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <ul id="comments-list-4">
+            <!-- comments will be added here by JavaScript -->
+        </ul><li>
+			<img src="user2.jpg" alt="User 1">
+			<p>Please don't use if you are not a careful person. You have to follow the instructions well.</p>
+			<span>- Lucy</span>
+		</li>
+
+		<li>
+			<img src="user2.jpg" alt="User 2">
+			<p>The first 3 weeks were terrible but my skin has never been better.</p>
+			<span>- Tyler</span>
+		</li>
+
+
+    </div>
+</div>
+
+<script>
+    // get the form and textarea elements for product 4
+    const form4 = document.getElementById('comment-form-4');
+    const textarea4 = document.getElementById('comment-text-4');
+
+    // add a submit event listener to the form for product 4
+    form4.addEventListener('submit', function(event) {
+        // prevent the default form submission behavior
+        event.preventDefault();
+
+        // get the comment text
+        const commentText = textarea4.value.trim();
+
+        // check if the comment is not empty
+        if (commentText !== '') {
+            // create a new list item for the comment
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img src="user1.jpg" alt="You">
+                <p>${commentText}</p>
+            `;
+
+            // get the comments list for product 4 and add the new comment
+            const commentsList4 = document.getElementById('comments-list-4');
+            commentsList4.appendChild(listItem);
+
+            // clear the textarea
+            textarea4.value = '';
+        }
+    });
+</script>
+<div class="product">
+    <img src="LRP.jpg" alt="Product 5">
+    <h2>La roche posay Cleanser</h2>
+    <p>Enriched with salicylic acid, this face wash excels in addressing sensitive and problematic skin and providing specialized solutions. What are you thoughts?</p>
+    <div class="comments">
+        <h2>Comments</h2>
+        <form id="comment-form-5">
+            <textarea id="comment-text-5" placeholder="Add your comment here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <ul id="comments-list-5">
+            <!-- comments will be added here by JavaScript -->
+        </ul><li>
+			<img src="user2.jpg" alt="User 1">
+			<p>It foams so well and has really helped my stubborn skin.</p>
+			<span>- Meghan</span>
+		</li>
+		<li>
+			<img src="user2.jpg" alt="User 2">
+			<p>Too expensive.</p>
+			<span>- Alvin</span>
+		</li>
+
+
+
+
+    </div>
+</div>
+
+<script>
+    // get the form and textarea elements for product 5
+    const form5 = document.getElementById('comment-form-5');
+    const textarea5 = document.getElementById('comment-text-5');
+
+    // add a submit event listener to the form for product 5
+    form5.addEventListener('submit', function(event) {
+        // prevent the default form submission behavior
+        event.preventDefault();
+
+        // get the comment text
+        const commentText = textarea5.value.trim();
+
+        // check if the comment is not empty
+        if (commentText !== '') {
+            // create a new list item for the comment
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <img src="user1.jpg" alt="You">
+                <p>${commentText}</p>
+            `;
+
+            // get the comments list for product 5 and add the new comment
+            const commentsList5 = document.getElementById('comments-list-5');
+            commentsList5.appendChild(listItem);
+
+            // clear the textarea
+            textarea5.value = '';
+        }
+    });
+</script>
+
+				
+				
+				<div class="product">
+					<video width="100%" controls>
+						<source src="NSM.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<h2>Nivea soft moisturiser</h2>
+					<p>Trending fast,this moisturiser from Nivea is rumoured to be the holy grail.It is infused with vitamin E and jojoba oil leaving the skin replenished and healthy.What do you think? Is it the next best thing or just another overhyped trend?.</p>
+					<div class="comments">
+						<h2>Comments</h2>
+						<form id="comment-form-6">
+							<textarea id="comment-text-6" placeholder="Add your comment here..."></textarea>
+							<button type="submit">Submit</button>
+						</form>
+						<ul id="comments-list-6">
+							<!-- comments will be added here by JavaScript -->
+						</ul><li>
+							
+						
+							<p>I was influenced to buy this recently.Still waiting to see progress .</p>
+							<span>- Sharon</span>
+						</li>
+
+						<li>
+							<img src="user2.jpg" alt="User 2">
+							<p>I absolutely love it. I even add a little more vitamin E oil in mine.</p>
+							<span>- Judy</span>
+						</li>
+
+
+					</div>
+				</div>
+				
+				<script>
+					// get the form and textarea elements for product 6
+					const form6 = document.getElementById('comment-form-6');
+					const textarea6 = document.getElementById('comment-text-6');
+				
+					// add a submit event listener to the form for product 6
+					form6.addEventListener('submit', function(event) {
+						// prevent the default form submission behavior
+						event.preventDefault();
+				
+						// get the comment text
+						const commentText = textarea6.value.trim();
+				
+						// check if the comment is not empty
+						if (commentText !== '') {
+							// create a new list item for the comment
+							const listItem = document.createElement('li');
+							listItem.innerHTML = `
+								<img src="user1.jpg" alt="You">
+								<p>${commentText}</p>
+							`;
+				
+							// get the comments list for product 6 and add the new comment
+							const commentsList6 = document.getElementById('comments-list-6');
+							commentsList6.appendChild(listItem);
+				
+							// clear the textarea
+							textarea6.value = '';
+						}
+					});
+				</script>
+				
+				
+	</main>
